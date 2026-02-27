@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Barreto Afiliados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <aside class="sidebar-new">
+        <div class="side-logo">B<span>.</span></div>
+        <nav class="side-nav">
+            <a href="#" class="active"><i class="fas fa-plus"></i></a>
+            <a href="index.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header-flex">
+            <h1>Painel do Barreto</h1>
+            <p>Adicione links de afiliado e gerencie sua vitrine.</p>
+        </header>
+
+        <section class="glass-form">
+            <form id="product-form">
+                <div class="input-stack">
+                    <label>Nome do Produto</label>
+                    <input type="text" id="p-name" placeholder="Ex: iPhone 15 Pro Max" required>
+                </div>
+                <div class="input-row">
+                    <div class="input-stack">
+                        <label>Preço (R$)</label>
+                        <input type="number" id="p-price" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="input-stack">
+                        <label>Preço Promo (Opcional)</label>
+                        <input type="number" id="p-promo" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+                <div class="input-stack">
+                    <label>Link de Afiliado</label>
+                    <input type="url" id="p-link" placeholder="https://..." required>
+                </div>
+                <div class="file-area">
+                    <input type="file" id="p-image" accept="image/*" required>
+                    <label for="p-image">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Escolher Imagem</span>
+                    </label>
+                </div>
+                <button type="submit" id="btn-publish" class="main-btn">Publicar Agora</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Itens na Vitrine</h2>
+            <div id="admin-product-list" class="admin-flex-list"></div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
